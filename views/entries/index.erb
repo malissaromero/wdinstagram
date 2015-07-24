@@ -1,0 +1,23 @@
+<h1>WDI Instagram</h>
+
+<p>
+  <% @entries.each do |entry| %>
+<div>
+  <%= entry.author %>
+</div>
+<div>
+  <img src="<%= entry.photo_url %>">
+</div>
+<div>
+  <%= entry.date_taken %>
+</div>
+<div>
+  <% end %>
+</div>
+<div>
+  <form action="/entries" method="post">
+    <input name="_method" type="hidden" value="delete">
+    <button type="submit">Delete</button>
+  </form>
+</div>
+</p>
